@@ -4,13 +4,19 @@ import {Categories} from '../data/category'
 import CategoryBox from '../components/CategoryBox'
 
 
-const renderCategories = ( itemData )=> {
-    return(
-        <CategoryBox data={itemData.item} />
-    )
-}
 export default function(props){
-    console.log(Categories)
+    const renderCategories = ( itemData )=> {
+        return(
+            <CategoryBox 
+                data={itemData.item} 
+                onClick={()=>{
+                    props.navigation.navigate('Status', {
+                        categoryId : itemData.item.id
+                    })
+                }}
+            />
+        )
+    }
     return(
         <View>
             <FlatList

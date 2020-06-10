@@ -3,7 +3,10 @@ const Font =  {
 }
 
 const Color = { 
-    primary : '#3E92CC'
+    primary : '#3E92CC',
+    secondary : '' ,
+    white : '#ffffff',
+    black : '#18191A'
 }
 
 export  { Font , Color}

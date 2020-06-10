@@ -19,7 +19,8 @@ export default function(){
                 tabBarOptions={{
                     activeTintColor : Color.primary,
                     labelStyle : {
-                        fontFamily :  Font.primary
+                        fontFamily :  Font.primary,
+                        paddingBottom : 5
                     }
                 }}
                 
