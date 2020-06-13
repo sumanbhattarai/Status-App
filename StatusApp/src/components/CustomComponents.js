@@ -8,14 +8,10 @@ const Heading = props => {
 }
 
 const NormalText = props => {
-    return <Text style={{...styles.normalText , ...style.props , color : props.color}}> {props.children} </Text>
+    return <Text style={{ ...styles.normalText , ...props.style , color : props.color}}> {props.children} </Text>
 }
 
-const SmallText = props => {
-    return <Text style={{...styles.smallText , ...styles.props , color : props.color}}> {props.children} </Text>
-}
-
-export { Heading , NormalText  , SmallText }
+export { Heading , NormalText  }
 
 const styles = StyleSheet.create({
     heading : {
@@ -25,15 +21,9 @@ const styles = StyleSheet.create({
         color : Color.black
     },
     normalText : {
-        fontSize : RFPercentage(1.5),
+        fontSize : RFPercentage(1.8),
         fontFamily : Font.primary ,
-        fontWeight : 'normal',
-        color : Color.black
-    },
-    normalText : {
-        fontSize : RFPercentage(1),
-        fontFamily : Font.primary,
-        color : Color.black
+        fontWeight : 'normal'
     }
 })
 

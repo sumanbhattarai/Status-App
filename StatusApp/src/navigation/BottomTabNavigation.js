@@ -2,8 +2,6 @@ import 'react-native-gesture-handler';
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import CategoryScreen from '../screen/CategoryScreen'
-import FavouriteScreen from '../screen/FavouriteScreen'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faBoxes , faStar } from '@fortawesome/free-solid-svg-icons'
 import { Font , Color } from '../constants/default'
