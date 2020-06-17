@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1052362129690",
+    "firebase_url": "https://statusapp-f2635.firebaseio.com",
+    "project_id": "statusapp-f2635",
+    "storage_bucket": "statusapp-f2635.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1052362129690:android:ab031edc917a507c90aca3",
+        "android_client_info": {
+          "package_name": "com.sumanbhattarai.statusapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1052362129690-ocqeelltp2tqb52q4h611be74bg811lh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvy2B8IKc1DHw4KFCssiukq_e1Jta1rlQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1052362129690-ocqeelltp2tqb52q4h611be74bg811lh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

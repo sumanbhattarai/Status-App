@@ -1,4 +1,4 @@
-package com.statusapp;
+package com.sumanbhattarai.statusapp;
 
 import android.app.Application;
 import android.content.Context;

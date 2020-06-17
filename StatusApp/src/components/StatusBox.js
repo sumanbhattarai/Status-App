@@ -1,4 +1,4 @@
-import React , {useState , useRef } from 'react'
+import React , {useState , useEffect } from 'react'
 import { View , Text , StyleSheet , TouchableOpacity ,Platform , ToastAndroid } from 'react-native'
 import { NormalText } from './CustomComponents'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
@@ -7,25 +7,40 @@ import { faCopy as faCopySolid , faStar as faStarSolid} from '@fortawesome/free-
 import { RFPercentage } from 'react-native-responsive-fontsize'
 import { Color } from '../constants/default'
 import Clipboard from "@react-native-community/clipboard"
+import { useDispatch , useSelector } from 'react-redux'
+import { addFav , deleteFav  } from '../store/action/status'
 
 
 export default function(props){
-    const [ isStarClick , setStarClick] = useState(false)
+    const isFav = useSelector(state=> state.status.favourite.filter(el=> el.id === props.data.id))
+    const [ isStarClick , setStarClick] = useState(isFav.length>0 ? true : false)
     const [ isCopyClick , setCopyClick] = useState(false)
+
+    const dispatch = useDispatch()
 
     const handleCopyClick = ()=> {
         Clipboard.setString(props.data.status)
         setCopyClick(true)
         Platform.OS === 'android' ? (
-            ToastAndroid.show('Copied to Clipboard', ToastAndroid.SHORT , ToastAndroid.BOTTOM) 
+            ToastAndroid.show('Copied to Clipboard', 
+                ToastAndroid.SHORT , 
+                ToastAndroid.BOTTOM
+            ) 
         ) : null
     }
     const handleStarClick = ()=> {
+        isStarClick ? (
+            dispatch(deleteFav(props.data.id))
+        ):(
+            dispatch(addFav(props.data.id , props.data.status))
+        )
         setStarClick(state=> !state)
         Platform.OS === 'android' ? (
-            ToastAndroid.show( !isStarClick ? 'Added to favourite.' : 'Removed from favourite', ToastAndroid.SHORT , ToastAndroid.BOTTOM) 
-        ) : null
-        
+            ToastAndroid.show( !isStarClick ? 'Added to favourite.' : 'Removed from favourite', 
+                ToastAndroid.SHORT , 
+                ToastAndroid.BOTTOM
+            ) 
+        ) : null   
     }
     return(
         <View style={styles.statusBox}>
@@ -79,6 +94,10 @@ const styles = StyleSheet.create({
         padding : 30,
         borderTopLeftRadius : 70,
         borderBottomRightRadius : 70,
+        borderLeftWidth : 5 ,
+        borderRightWidth : 5 ,
+        borderLeftColor : Color.primary ,
+        borderRightColor : Color.primary,
         shadowColor : 'black',
         shadowOffset : {
             width : 0 ,

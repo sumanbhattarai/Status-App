@@ -1,4 +1,4 @@
-package com.statusapp;
+package com.sumanbhattarai.statusapp;
 
 import com.facebook.react.ReactActivity;
 
