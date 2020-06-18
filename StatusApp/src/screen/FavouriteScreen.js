@@ -1,7 +1,6 @@
-import React , {useEffect } from 'react'
+import React from 'react'
 import { FlatList , View} from 'react-native'
-import { useSelector , useDispatch  } from 'react-redux'
-import {loadFavStatus} from '../store/action/status'
+import { useSelector } from 'react-redux'
 import Status from '../components/StatusBox'
 import BannerAd from '../components/BannerAd'
 import { NormalText } from '../components/CustomComponents'
@@ -11,11 +10,6 @@ const renderFav = (itemData)=>{
 }
 export default function(){
     const favStatus = useSelector(state=>state.status.favourite)
-
-    const dispatch = useDispatch()
-    useEffect(()=>{
-      dispatch(loadFavStatus())
-    }, [dispatch])
     return(
         <View>
             <BannerAd/>
