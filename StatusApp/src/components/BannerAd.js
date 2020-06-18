@@ -3,6 +3,8 @@ import { View } from 'react-native'
 import { BannerAd, BannerAdSize, TestIds  } from '@react-native-firebase/admob';
 
 const adUnitId = __DEV__ ? TestIds.BANNER : "ca-app-pub-6760161415189290~2275052893";
+console.log(__DEV__)
+console.log(adUnitId)
 
 export default function(){
     const [ adLoad , setAdLoad]  = useState(false)
