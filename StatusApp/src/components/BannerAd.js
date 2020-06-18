@@ -1,10 +1,6 @@
 import React , {useState} from 'react'
 import { View } from 'react-native'
-import { BannerAd, BannerAdSize, TestIds  } from '@react-native-firebase/admob';
-
-const adUnitId = __DEV__ ? TestIds.BANNER : "ca-app-pub-6760161415189290~2275052893";
-console.log(__DEV__)
-console.log(adUnitId)
+import { BannerAd, BannerAdSize  } from '@react-native-firebase/admob';
 
 export default function(){
     const [ adLoad , setAdLoad]  = useState(false)
@@ -13,17 +9,17 @@ export default function(){
         console.log('Ad opened')
         setAdLoad(true)
     }
-    const handleAdFailed = ()=>{
-        console.log('ad failed to open')
+    const handleAdFailed = (e)=>{
+        console.log('ad failed to open' , e)
         setAdLoad(false)
     }
     return(
         <View style={ adLoad ? {}: {height : 0} }>
                 <BannerAd 
-                    unitId={adUnitId}
+                    unitId="ca-app-pub-6760161415189290/1827071154"
                     size={BannerAdSize.SMART_BANNER}
                     onAdLoaded={handleAdOpened}
-                    onAdFailedToLoad={handleAdFailed}
+                    onAdFailedToLoad={(e)=>handleAdFailed(e)}
                 />
         </View> 
     )
