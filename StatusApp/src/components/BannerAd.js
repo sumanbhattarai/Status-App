@@ -15,10 +15,10 @@ export default function(){
         setAdLoad(false)
     }
     return(
-        <View style={ adLoad ? {}:{height : 0} }>
+        <View style={ adLoad ? {}: {height : 0} }>
                 <BannerAd 
                     unitId={TestIds.BANNER} 
-                    size={BannerAdSize.FULL_BANNER}
+                    size={BannerAdSize.SMART_BANNER}
                     onAdLoaded={handleAdOpened}
                     onAdFailedToLoad={handleAdFailed}
                 />
