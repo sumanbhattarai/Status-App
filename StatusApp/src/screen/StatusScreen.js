@@ -17,7 +17,7 @@ export default function(props){
         title : selectedCategory.title
     })
     return(
-        <View>
+        <View style={{flex :1}}>
             <BannerAd />
             <FlatList
                 data={selectedStatus}

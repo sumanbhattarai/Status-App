@@ -18,7 +18,7 @@ export default function(props){
         )
     }
     return(
-        <View>
+        <View style={{flex : 1}}>
             <BannerAd/>
             <FlatList
                 data={Categories}
