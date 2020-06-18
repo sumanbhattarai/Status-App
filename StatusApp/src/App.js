@@ -1,11 +1,12 @@
-import React  from 'react'
+import React , { useEffect } from 'react'
 import BottomTabNavigation from './navigation/BottomTabNavigation'
 import { createStore , combineReducers, applyMiddleware } from 'redux'
 import { Provider  } from 'react-redux'
 import ReduxThunk from 'redux-thunk'
 import statusReducer from './store/reducer/status'
 import { init } from './database/db'
-import admob, { MaxAdContentRating } from '@react-native-firebase/admob';
+import admob, { MaxAdContentRating } from '@react-native-firebase/admob'
+import SplashScreen from 'react-native-splash-screen'
 
 // calling the init func from db
 init().then(result=>{
@@ -42,5 +43,8 @@ const rootReducer = combineReducers({
 
 const store = createStore( rootReducer , applyMiddleware(ReduxThunk) )
 export default function(){
+  useEffect(()=>{
+    SplashScreen.hide()
+  },[])
   return <Provider store={store}><BottomTabNavigation/></Provider>
 }
