@@ -1,8 +1,9 @@
 import React from 'react'
-import {View , Text , FlatList} from 'react-native'
+import {View , FlatList} from 'react-native'
 import { Categories } from '../data/category'
 import { useSelector } from 'react-redux'
 import StatusBox from '../components/StatusBox'
+import BannerAd from '../components/BannerAd'
 
 const renderStatus = (itemData)=> {
     return <StatusBox data={itemData.item} />
@@ -16,9 +17,12 @@ export default function(props){
         title : selectedCategory.title
     })
     return(
-        <FlatList
-            data={selectedStatus}
-            renderItem={renderStatus}
-        />
+        <View>
+            <BannerAd />
+            <FlatList
+                data={selectedStatus}
+                renderItem={renderStatus}
+            />
+        </View>
     )
 }
