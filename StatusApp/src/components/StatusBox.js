@@ -1,5 +1,5 @@
 import React , {useState , useEffect } from 'react'
-import { View , Text , StyleSheet , TouchableOpacity ,Platform , ToastAndroid } from 'react-native'
+import { View  , StyleSheet , TouchableOpacity ,Platform , ToastAndroid } from 'react-native'
 import { NormalText } from './CustomComponents'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faCopy , faStar } from '@fortawesome/free-regular-svg-icons'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { View , Text , StyleSheet , TouchableOpacity , Dimensions } from 'react-native'
+import { View , StyleSheet , TouchableOpacity , Dimensions } from 'react-native'
 import {Color } from '../constants/default'
 import { Heading } from './CustomComponents'
 
