@@ -4,10 +4,8 @@ import { Categories } from '../data/category'
 import { useSelector } from 'react-redux'
 import StatusBox from '../components/StatusBox'
 import BannerAd from '../components/BannerAd'
+import InterstitialObj from '../components/InterstitialAd'
 
-const renderStatus = (itemData)=> {
-    return <StatusBox data={itemData.item} />
-}
 export default function(props){
     const {categoryId} = props.route.params
     const selectedCategory = Categories.find(el=> el.id === categoryId )
@@ -16,6 +14,14 @@ export default function(props){
     props.navigation.setOptions({
         title : selectedCategory.title
     })
+    const renderStatus = (itemData)=> {
+        return(
+            <StatusBox 
+                data={itemData.item}
+                showAd={()=>InterstitialObj.showInterstitialAd()} 
+            />
+        ) 
+    }
     return(
         <View style={{flex :1}}>
             <BannerAd />

@@ -27,6 +27,8 @@ export default function(props){
                 ToastAndroid.BOTTOM
             ) 
         ) : null
+
+        props.showAd()
     }
     const handleStarClick = ()=> {
         isStarClick ? (
@@ -40,7 +42,8 @@ export default function(props){
                 ToastAndroid.SHORT , 
                 ToastAndroid.BOTTOM
             ) 
-        ) : null   
+        ) : null
+        !isStarClick ? props.showAd():null   
     }
     return(
         <View style={styles.statusBox}>

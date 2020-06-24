@@ -4,9 +4,10 @@ import { useSelector } from 'react-redux'
 import Status from '../components/StatusBox'
 import BannerAd from '../components/BannerAd'
 import { NormalText } from '../components/CustomComponents'
+import InterstitialObj from '../components/InterstitialAd'
 
 const renderFav = (itemData)=>{
-    return <Status data={itemData.item} />
+    return <Status data={itemData.item} showAd={()=>InterstitialObj.showInterstitialAd()}  />
 }
 export default function(){
     const favStatus = useSelector(state=>state.status.favourite)
