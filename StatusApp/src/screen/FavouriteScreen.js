@@ -12,7 +12,7 @@ const renderFav = (itemData)=>{
 export default function(){
     const favStatus = useSelector(state=>state.status.favourite)
     return(
-        <View>
+        <View style={{flex : 1}}>
             <BannerAd/>
             { 
                 favStatus.length >0 ? (
