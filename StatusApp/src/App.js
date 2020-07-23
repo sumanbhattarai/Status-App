@@ -44,7 +44,9 @@ const rootReducer = combineReducers({
 const store = createStore( rootReducer , applyMiddleware(ReduxThunk) )
 export default function(){
   useEffect(()=>{
-    SplashScreen.hide()
+    setTimeout(()=>{
+      SplashScreen.hide()
+    },500)
   },[])
   return <Provider store={store}><BottomTabNavigation/></Provider>
 }
